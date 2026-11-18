@@ -70,9 +70,10 @@
 # Passed:25. view_settings should return formatted settings for a non-empty dictionary.
 # Passed:26. view_settings should capitalize the first letter of each setting name.
 # Passed:27. view_settings should display the correct results and end with a newline character.
+
 test_settings = {
     "theme":"dark",
-    "Language":"english"
+    "language":"english"
 }
 
 def add_setting(dictionary, tupple):
@@ -83,14 +84,13 @@ def add_setting(dictionary, tupple):
         return f"Setting '{key}' already exists! Cannot add a new setting with this name."
     else:
         dictionary[key] = value
-        return f"Setting '{key}' added with value 'high' successfully!"
+        return f"Setting '{key}' added with value '{value}' successfully!"
 
 def update_setting(dictionary, tupple):
     key, value = tupple
     key = key.lower()
     value = value.lower()
     if key in dictionary:
-        dictionary.get(key)
         dictionary[key] = value
         return f"Setting '{key}' updated to 'dark' successfully!"
     else:
